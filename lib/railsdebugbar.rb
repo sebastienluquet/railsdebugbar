@@ -13,7 +13,7 @@ class RailsDebugBar
 		parts = ["DEBUG",
 			rails_version,
 			"#{controller.class.to_s}/#{controller.action_name}.#{controller.request.format}",
-			controller.response.status,
+			controller.response.headers['Status'],
 			["Request headers"] + hash_to_array(controller.request.headers),
 			["Response headers"]+ hash_to_array(controller.response.headers)
 		]
